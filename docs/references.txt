@@ -1,0 +1,26 @@
+JFrame / Swing reference links
+
+
+Java SE API docs (look up any class/method):
+https://docs.oracle.com/en/java/javase/21/docs/api/index.html
+
+Official Swing tutorial (has working example code, explains the why):
+https://docs.oracle.com/javase/tutorial/uiswing/
+
+How to Use Menus (JMenuBar / JMenu / JMenuItem):
+https://docs.oracle.com/javase/tutorial/uiswing/components/menu.html
+
+How to Use Text Areas (JTextArea / JScrollPane):
+https://docs.oracle.com/javase/tutorial/components/textarea.html
+
+Classes used in TextEditor.java, look these up if something doesn't make sense:
+- JFrame            - the window itself
+- JMenuBar/JMenu/JMenuItem - the menu bar
+- JToolBar/JButton  - the toolbar
+- JTextArea/JScrollPane - the editable text box + scrollbars
+- JFileChooser      - the Open/Save file dialog
+- UndoManager / UndoableEditListener - undo/redo
+- DocumentListener  - detecting text changes (used for the * unsaved indicator)
+
+other opstion for opening the javaDoc: in IntelliJ you can Ctrl+click (Cmd+click on Mac) any class/method name
+in the code and it jumps to the same Javadoc right inside the IDE.
