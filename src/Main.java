@@ -2,7 +2,8 @@ import javax.swing.SwingUtilities;
 
 /**
  * @author Kevyn Victor Salonga
- * @author Domenic doyle
+ * @author Domenic Doyle
+ * @author Ryan Stencavage
  */
 public class Main {
     public static void main(String[] args) {

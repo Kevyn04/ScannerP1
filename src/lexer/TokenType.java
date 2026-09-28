@@ -4,7 +4,7 @@ package lexer;
 /**
  * @author Kevyn Victor Salonga
  * @author Ryan Stencavage
- * @author Domenic doyle
+ * @author Domenic Doyle
  */
 public enum TokenType {
     // data types
