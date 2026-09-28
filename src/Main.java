@@ -1,7 +1,7 @@
 import javax.swing.SwingUtilities;
 
 /**
- * @author Kevyn Victor Salonga
+ * @author Kevyn Victor Salonga, Domenic Doyle
  */
 public class Main {
     public static void main(String[] args) {
