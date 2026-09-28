@@ -18,7 +18,7 @@ import java.util.List;
 // text editor part of the assignment - new/open/save, cut/copy/paste, undo/redo
 // also has a Tools menu that runs the scanner from part 2 on whatever is typed in
 /**
- * @author Kevyn Victor Salonga, Domenic Doyle,
+ * @author Kevyn Victor Salonga
  */
 public class TextEditor extends JFrame {
 
@@ -133,7 +133,6 @@ public class TextEditor extends JFrame {
 
     private void newFile() {
         if (!confirmDiscardUnsaved()) return;
-        setTitle("ScannerP1 Text Editor - Untitled");
         textArea.setText("");
         undoManager.discardAllEdits();
         currentFile = null;
@@ -219,9 +218,6 @@ public class TextEditor extends JFrame {
         JTextArea resultArea = new JTextArea(sb.toString(), 25, 55);
         resultArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
         resultArea.setEditable(false);
-        resultArea.setLineWrap(false);
-        resultArea.setWrapStyleWord(false);
-
 
         JOptionPane.showMessageDialog(
             this,

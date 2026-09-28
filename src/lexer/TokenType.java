@@ -3,6 +3,7 @@ package lexer;
 // every kind of token the scanner can spit out
 /**
  * @author Kevyn Victor Salonga
+ * @author Ryan Stencavage
  */
 public enum TokenType {
     // data types
