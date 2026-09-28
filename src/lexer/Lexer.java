@@ -14,6 +14,7 @@ import java.util.Map;
 // figuring out if a minus is subtraction or negation is a parser's job, not the scanner's
 /**
  * @author Kevyn Victor Salonga
+ * @author Ryan Stencavage
  */
 public class Lexer {
 

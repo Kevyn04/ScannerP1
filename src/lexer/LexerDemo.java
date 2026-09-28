@@ -6,6 +6,7 @@ import java.util.List;
 // sample MatrixLang code and prints out every token it finds
 /**
  * @author Kevyn Victor Salonga
+ * @author Ryan Stencavage
  */
 public class LexerDemo {
 

@@ -19,6 +19,7 @@ import java.util.List;
 // also has a Tools menu that runs the scanner from part 2 on whatever is typed in
 /**
  * @author Kevyn Victor Salonga
+ * @author Ryan Stencavage
  */
 public class TextEditor extends JFrame {
 
@@ -37,6 +38,7 @@ public class TextEditor extends JFrame {
 
         textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
         textArea.setLineWrap(false);
+        textArea.setMargin(new Insets(5,5,5,5));
         // uhh this has to be attached to the Document not the JTextArea itself,
         // spent like 20 min confused why undo wasnt working before i figured that out
         textArea.getDocument().addUndoableEditListener(new UndoableEditListener() {

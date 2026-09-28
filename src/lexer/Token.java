@@ -3,6 +3,7 @@ package lexer;
 // holds one token - what kind it is, the actual text, and where it was in the source
 /**
  * @author Kevyn Victor Salonga
+ * @author Ryan Stencavage
  */
 public class Token {
     public final TokenType type;
