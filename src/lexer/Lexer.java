@@ -15,6 +15,7 @@ import java.util.Map;
 /**
  * @author Kevyn Victor Salonga
  * @author Ryan Stencavage
+ * @author Domenic doyle
  */
 public class Lexer {
 

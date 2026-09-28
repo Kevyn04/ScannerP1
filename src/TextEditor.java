@@ -19,6 +19,7 @@ import java.util.List;
 // also has a Tools menu that runs the scanner from part 2 on whatever is typed in
 /**
  * @author Kevyn Victor Salonga
+ * @author Domenic doyle
  */
 public class TextEditor extends JFrame {
 

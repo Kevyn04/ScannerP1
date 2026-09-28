@@ -4,6 +4,7 @@ package lexer;
 /**
  * @author Kevyn Victor Salonga
  * @author Ryan Stencavage
+ * @author Domenic doyle
  */
 public class Token {
     public final TokenType type;

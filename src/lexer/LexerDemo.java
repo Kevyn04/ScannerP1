@@ -7,8 +7,10 @@ import java.util.List;
 /**
  * @author Kevyn Victor Salonga
  * @author Ryan Stencavage
+ * @author Domenic doyle
  */
 public class LexerDemo {
+
 
     private static final String SAMPLE_PROGRAM = String.join("\n",
         "// sample MatrixLang program to test the scanner",
