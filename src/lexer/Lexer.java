@@ -130,7 +130,7 @@ public class Lexer {
     private void identifier() {
         while (isAlphaNumeric(peek())) advance();
         String text = source.substring(start, current);
-        addToken(KEYWORDS.getOrDefault(text, TokenType.IDENTIFIER));
+        addToken(KEYWORDS.getOrDefault(text, TokenType.ID));
     }
 
     private void number() {
