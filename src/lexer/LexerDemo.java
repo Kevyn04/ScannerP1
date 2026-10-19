@@ -45,12 +45,21 @@ public class LexerDemo {
         System.out.println(SAMPLE_PROGRAM);
         System.out.println();
 
-        List<Token> tokens = new Lexer(SAMPLE_PROGRAM).scanTokens();
+        Lexer lexer = new Lexer(SAMPLE_PROGRAM);
+        List<Token> tokens = lexer.scanTokens();
 
         System.out.println("=== Tokens ===");
         System.out.printf("%-6s %-6s %-14s %s%n", "LINE", "COL", "TYPE", "LEXEME");
         for (Token token : tokens) {
             System.out.println(token);
+        }
+
+        if (!lexer.getErrors().isEmpty()) {
+            System.out.println();
+            System.out.println("=== Errors ===");
+            for (String err : lexer.getErrors()) {
+                System.out.println(err);
+            }
         }
     }
 }

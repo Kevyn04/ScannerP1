@@ -211,12 +211,20 @@ public class TextEditor extends JFrame {
     private void tokenizeCurrentText() {
         // pulls whatever's in the text area right now and feeds it straight
         // into the part 2 scanner, kind of a nice way to test both parts at once tbh
-        List<Token> tokens = new Lexer(textArea.getText()).scanTokens();
+        Lexer lexer = new Lexer(textArea.getText());
+        List<Token> tokens = lexer.scanTokens();
 
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%-6s %-6s %-14s %s%n", "LINE", "COL", "TYPE", "LEXEME"));
         for (Token token : tokens) {
             sb.append(token).append('\n');
+        }
+        // bad characters don't become tokens anymore, they get listed down here
+        if (!lexer.getErrors().isEmpty()) {
+            sb.append("\n=== Errors ===\n");
+            for (String err : lexer.getErrors()) {
+                sb.append(err).append('\n');
+            }
         }
 
         JTextArea resultArea = new JTextArea(sb.toString(), 25, 55);

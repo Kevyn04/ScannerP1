@@ -19,7 +19,7 @@ public enum TokenType {
     // built-in functions
     DET, SQRT, TRANS, INV, LEN, RAND,
 
-    // identifiers/literals
+    // identifiers/literals - every number (int, float, negative) is just NUM
     ID, NUM,
 
     // operators
@@ -39,6 +39,6 @@ public enum TokenType {
     LBRACKET, RBRACKET, // [ ]
     COMMA, SEMICOLON,   // , ;
 
-    // everything else
-    EOF, UNKNOWN
+    // end of input
+    EOF
 }
