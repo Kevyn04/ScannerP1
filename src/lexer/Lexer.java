@@ -99,9 +99,18 @@ public class Lexer {
             case ',': addToken(TokenType.COMMA); break;
             case ';': addToken(TokenType.SEMICOLON); break;
             case '+': addToken(TokenType.PLUS); break;
-            case '-': addToken(TokenType.MINUS); break;
-            case '*': addToken(TokenType.STAR); break;
 
+            //we need -5 to be taken as a single token NUM rather than: minus, int_literal
+            case '-':
+                if (isDigit(peek())) {
+                    start = current - 1;  // include the '-' in the lexeme
+                    number(true); //this flag will indicate a negative num
+            } else {
+                addToken(TokenType.MINUS);
+            }
+            break;
+
+            case '*': addToken(TokenType.STAR); break;
             case '=': addToken(match('=') ? TokenType.EQ : TokenType.ASSIGN); break;
             case '<': addToken(match('=') ? TokenType.LE : TokenType.LT); break;
             case '>': addToken(match('=') ? TokenType.GE : TokenType.GT); break;
@@ -118,7 +127,7 @@ public class Lexer {
                 // uh oh, not an operator/punctuation char, so its either the start
                 // of a number, the start of a word, or just garbage we dont recognize
                 if (isDigit(c)) {
-                    number();
+                    number(false);
                 } else if (isAlpha(c)) {
                     identifier();
                 } else {
@@ -133,7 +142,7 @@ public class Lexer {
         addToken(KEYWORDS.getOrDefault(text, TokenType.ID));
     }
 
-    private void number() {
+    private void number(boolean isNegative) {
         while (isDigit(peek())) advance();
 
         boolean isFloat = false;
@@ -145,7 +154,13 @@ public class Lexer {
             advance(); // consume '.'
             while (isDigit(peek())) advance();
         }
-        addToken(isFloat ? TokenType.FLOAT_LITERAL : TokenType.INT_LITERAL);
+        String text = source.substring(start, current);
+
+        if (isNegative) {
+            text = "-" + text;
+        }
+
+        addToken(TokenType.NUM);
     }
 
     private void addToken(TokenType type) {

@@ -20,7 +20,6 @@ public enum TokenType {
     DET, SQRT, TRANS, INV, LEN, RAND,
 
     // identifiers/literals
-    ID, INT_LITERAL, FLOAT_LITERAL,
 
     // operators
     ASSIGN,   // =
