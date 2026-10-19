@@ -154,11 +154,6 @@ public class Lexer {
             advance(); // consume '.'
             while (isDigit(peek())) advance();
         }
-        String text = source.substring(start, current);
-
-        if (isNegative) {
-            text = "-" + text;
-        }
 
         addToken(TokenType.NUM);
     }
